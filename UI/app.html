@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intoxicated Person Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body class="body">
+    <nav class="navbar navbar-light bg-light justify-content-center">
+       <a class="navbar-brand" href="#">
+        <img src="./images/police.png" alt="Logo" class="logo"> INTOXICATED PERSON CLASSIFIER USING SVM
+    </a>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+
+        <div class="col card-wrapper" data-player="Severely_Drunk">
+                <div class="card border-0">
+                    <div class="custom-squircle-image mx-auto">
+                        <img class="w-100 h-100" src="./images/Severely_Drunk13.png" alt="Squircle Image">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title" >Severely Drunk</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-wrapper" data-player="Slightly_Drunk">
+                    <div class="card border-0">
+                        <div class="custom-squircle-image mx-auto">
+                            <img class="w-100 h-100" src="./images/Slightly_Drunk577.png" alt="Squircle Image">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">Slightly Drunk</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col card-wrapper" data-player="Sober_Images">
+                    <div class="card border-0">
+                        <div class="custom-squircle-image mx-auto">
+                            <img class="w-100 h-100" src="./images/Sober_Images14.PNG" alt="Squircle Image">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">Sober</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+
+        </div>
+        <div class="container" >
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload_2716054.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+      <div class="rol">
+  <div class="row mt-3 justify-content-center">
+    <div class="col-auto">
+      <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+    </div>
+    <div class="col-auto">
+      <button id="captureBtn" type="button" class="btn btn-primary ml-5">Capture from Webcam</button>
+    </div>
+  </div>
+</div>
+
+                 <!--button to capture from web cam-->
+            </div>
+
+          <div class="col-sm-8 " id="webcamContainer" style="display: none;">
+             <video id="webcamPreview" width="320" height="240" autoplay muted></video>
+          </div>
+            <div class="col-sm-8 error" id="error" >
+                <p>Cannot classify image. Classifier was not able to detect face and two eyes properly</p>
+            </div>
+
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable">
+                        <tr>
+                            <th>Prediction</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Severely Drunk</td>
+                            <td id="score_Severely_Drunk"></td>
+                        </tr>
+                        <tr>
+                            <td>Slightly Drunk</td>
+                            <td id="score_Slightly_Drunk"></td>
+                        </tr>
+                        <tr>
+                            <td>Sober</td>
+                            <td id="score_Sober_Images"></td>
+                        </tr>
+
+
+<!--                     recomendation on the classifier-->
+
+                        <tr>
+                            <td>Recommendation</td>
+                            <td id="recommendation"></td>
+                        </tr>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+
+</html>
